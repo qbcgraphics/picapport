@@ -10,7 +10,7 @@ services:
     environment:
       - TZ=Europe/Berlin
       - Xms=256m
-      - Xmx=512g
+      - Xmx=1g
       - PICAPPORT_LANG=de
     networks:
       - backend
