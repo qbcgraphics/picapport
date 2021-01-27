@@ -1,0 +1,19 @@
+version: '2'
+
+services:
+  picapport:
+    container_name: PicApport
+    build: .
+    restart: always
+    ports:
+       - 2442:2442
+    environment:
+      - TZ=Europe/Berlin
+      - Xms=256m
+      - Xmx=512g
+      - PICAPPORT_LANG=de
+    networks:
+      - backend
+    volumes:
+      - /volume1/docker/picapport/config:/opt/picapport/.picapport
+      - /volume1/NAS/Bilder:/srv/photos
